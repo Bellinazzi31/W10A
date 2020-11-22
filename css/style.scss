@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 0.825rem;
+}
+
+body {
+    background-color: #f9f9f9;
+    font-family: verdana, sans-serif;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+    font-style: italic;
+}
+
+.tweets {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+.tweet {
+    background-color: #fff;
+    padding: 1.5rem;
+    line-height: 1.6;
+    
+    &.faded {
+        opacity: 0.3;
+    }
+    
+    &.hoverable {
+        cursor: pointer;
+        transition: all 0.15s ease;
+        
+        &:hover {
+            background-color: #777 !important;
+        }
+    }
+    
+    .thumbnail {
+        margin: 1rem auto;
+        width: 96px;
+        height: 96px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Donald_Trump_August_19%2C_2015_%28cropped%29.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 500px;
+        border: 6px solid #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0 6px 2px
+    }
+     
+    h4 {
+        text-align: center;
+    }
+    
+    .time {
+        text-align: center;
+        font-style: italic;
+    }
+    
+    .message {
+        margin-top: 1rem;
+    }
+}
+
+
+// add tablet breakpoint
+@media screen and (min-width: 768px) {
+    .tweets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// add desktop breakpoint
+@media screen and (min-width: 991px) {
+    .tweets {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
